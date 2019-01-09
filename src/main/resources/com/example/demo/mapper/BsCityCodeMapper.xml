@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.BsCityCodeMapper">
+
+    <select id="selectCityCodeByCityCode" resultType="cityCode">
+        SELECT *
+          FROM BTMS.BS_CITY_CODE
+         WHERE CITY_CODE = #{cityCode}
+    </select>
+
+    <select id="selectCityCode" resultType="cityCode">
+        SELECT * FROM BTMS.BS_CITY_CODE
+    </select>
+
+</mapper>
