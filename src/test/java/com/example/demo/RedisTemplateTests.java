@@ -16,7 +16,7 @@ public class RedisTemplateTests {
     StringRedisTemplate redisTemplate;
 
     @Test
-    public void getTemplate() {
+    public void REDIS조회() {
         System.out.println("============");
         String key = "HO_HOTEL_CODE_MAPPING:300005:OISWUBSH:HOTEL_CODE";
         String value = redisTemplate.opsForValue().get(key);
@@ -25,7 +25,7 @@ public class RedisTemplateTests {
     }
 
     @Test
-    public void setTemplate() {
+    public void REDIS등록() {
         String key = "key:springboot";
         redisTemplate.opsForValue().set(key, "Hello");
         String value = redisTemplate.opsForValue().get(key);

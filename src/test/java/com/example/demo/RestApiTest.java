@@ -28,9 +28,4 @@ public class RestApiTest {
         assertThat(response.getBody()).isNotNull();
         System.out.println("=================");
     }
-
-    @Test
-    public void jsonTest() {
-        String json = "{\"cityCode\":\"DEFHI\",\"countryCode\":\"DE\",\"stateCode\":null,\"cityFileName\":\"Flonheim_DE\",\"cityNameEn\":\"Flonheim\",\"cityNameKo\":\"Flonheim\",\"cityNameJa\":null,\"cityNameZh\":null,\"cityNameFr\":null,\"cityNameEs\":null,\"cityNameDe\":null}";
-    }
 }

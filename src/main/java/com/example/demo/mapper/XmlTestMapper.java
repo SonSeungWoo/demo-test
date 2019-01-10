@@ -1,9 +1,12 @@
 package com.example.demo.mapper;
 
-import com.example.demo.domain.XmlTest;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.Map;
 
 @Mapper
 public interface XmlTestMapper {
-    XmlTest getXmlString(String input);
+
+    void mapProcedureList(Map map);
+
 }

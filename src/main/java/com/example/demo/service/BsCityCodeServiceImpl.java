@@ -11,19 +11,22 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class BsCityCodeService {
+public class BsCityCodeServiceImpl implements BsCityCodeService{
 
     private final BsCityCodeMapper cityCodeMapper;
 
-    public BsCityCode getCityCodeByCode(String cityCode){
+    @Override
+    public BsCityCode getCityCodeByCode(String cityCode) {
         return cityCodeMapper.selectCityCodeByCityCode(cityCode);
     }
 
+    @Override
     public List<BsCityCode> getCityCode() {
         return cityCodeMapper.selectCityCode();
     }
 
-    public List<BsCityCode> findByName(String name){
+    @Override
+    public List<BsCityCode> findByName(String name) {
         return cityCodeMapper.findByName(name);
     }
 }
