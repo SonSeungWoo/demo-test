@@ -10,9 +10,9 @@ import java.util.List;
 @Mapper
 public interface BsCityCodeMapper {
 
-    BsCityCode selectCityCodeByCityCode(String cityCode);
+    BsCityCode getCityCodeByCode(String cityCode);
 
-    List<BsCityCode> selectCityCode();
+    List<BsCityCode> getCityCode();
 
     @Select("select * from BTMS.BS_CITY_CODE where CITY_FILE_NAME = #{name}")
     List<BsCityCode> findByName(@Param("name") String name);

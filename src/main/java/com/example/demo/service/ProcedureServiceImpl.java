@@ -11,10 +11,11 @@ import java.util.Map;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class XmlTestService {
+public class ProcedureServiceImpl implements ProcedureService{
 
     private final XmlTestMapper xmlTestMapper;
 
+    @Override
     public Map mapProcedureList() {
         Map map = new HashMap();
         map.put("vInputstring", "<Input Code=\"5J\"/>");

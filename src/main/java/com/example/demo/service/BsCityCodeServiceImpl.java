@@ -11,18 +11,18 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class BsCityCodeServiceImpl implements BsCityCodeService{
+public class BsCityCodeServiceImpl implements BsCityCodeService {
 
     private final BsCityCodeMapper cityCodeMapper;
 
     @Override
     public BsCityCode getCityCodeByCode(String cityCode) {
-        return cityCodeMapper.selectCityCodeByCityCode(cityCode);
+        return cityCodeMapper.getCityCodeByCode(cityCode);
     }
 
     @Override
     public List<BsCityCode> getCityCode() {
-        return cityCodeMapper.selectCityCode();
+        return cityCodeMapper.getCityCode();
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.example.demo;
 
 import com.example.demo.domain.BsCityCode;
 import com.example.demo.service.BsCityCodeService;
-import com.example.demo.service.XmlTestService;
+import com.example.demo.service.ProcedureServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONException;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class DemoApplicationTests {
     BsCityCodeService cityCodeService;
 
     @Autowired
-    XmlTestService xmlTestService;
+    ProcedureServiceImpl procedureServiceImpl;
 
     @Test
     public void 도시코드로조회() {
@@ -53,7 +53,7 @@ public class DemoApplicationTests {
 
     @Test
     public void P_XML_SELECT_프로시저호출() throws JSONException {
-        Map map = xmlTestService.mapProcedureList();
+        Map map = procedureServiceImpl.mapProcedureList();
         log.debug("===============================");
         log.debug("resultList : {}", map.get("resultList"));
         log.debug("===============================");

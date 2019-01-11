@@ -5,13 +5,13 @@
 
 <mapper namespace="com.example.demo.mapper.BsCityCodeMapper">
 
-    <select id="selectCityCodeByCityCode" resultType="cityCode">
+    <select id="getCityCodeByCode" resultType="cityCode">
         SELECT *
           FROM BTMS.BS_CITY_CODE
          WHERE CITY_CODE = #{cityCode}
     </select>
 
-    <select id="selectCityCode" resultType="cityCode">
+    <select id="getCityCode" resultType="cityCode">
         SELECT * FROM BTMS.BS_CITY_CODE
     </select>
 

@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.*;
+
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,7 +29,25 @@ public class JsonXmlParsinTest {
     public void JSON을XML로파싱() {
         String json = "{\"cityCode\":\"DEFHI\",\"countryCode\":\"DE\",\"stateCode\":null,\"cityFileName\":\"Flonheim_DE\",\"cityNameEn\":\"Flonheim\",\"cityNameKo\":\"Flonheim\",\"cityNameJa\":null,\"cityNameZh\":null,\"cityNameFr\":null,\"cityNameEs\":null,\"cityNameDe\":null}";
         String xml = U.jsonToXml(json);
-        System.out.println(xml);
+        log.debug("===============================");
+        log.debug("cityCode : {}", xml);
+        log.debug("===============================");
+    }
 
+    @Test
+    public void XML파일파싱() throws IOException {
+        String url = "/Users/traport/Downloads/FlightSearchResponse.xml";
+        File file = new File(url);
+        InputStream inputStream = new FileInputStream(file);
+        StringBuilder builder = new StringBuilder();
+        int ptr = 0;
+        while ((ptr = inputStream.read()) != -1) {
+            builder.append((char) ptr);
+        }
+        String xml  = builder.toString();
+        JSONObject jsonObj = XML.toJSONObject(xml);
+        log.debug("===============================");
+        log.debug("jsonObj : {}", jsonObj);
+        log.debug("===============================");
     }
 }
